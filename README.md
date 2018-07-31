@@ -1,7 +1,5 @@
 # SAGA Hadoop
 
-Last Updated: 12/09/2017
-Last Updated: 07/23/2018
 Last Updated: 07/31/2018
 
 # Overview:
