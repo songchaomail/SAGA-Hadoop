@@ -383,7 +383,7 @@ if __name__ == "__main__" :
     (options, args) = parser.parse_args()
     config_name=options.config_name
     ppn = options.ppn
-    logging.debug("Bootstrap Hadoop on " + socket.gethostname() + " Config: " + config_name + " Vcores: " + str(ppn))
+    print("Bootstrap Hadoop on " + socket.gethostname() + " Config: " + config_name + " Vcores: " + str(ppn))
     
     if not os.path.exists(HADOOP_HOME):
         try:
