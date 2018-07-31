@@ -6,14 +6,6 @@
         <value>3</value>
     </property>
     <property>
-        <name>dfs.name.dir</name>
-        <value>%s</value>
-    </property>
-    <!--property>
-        <name>dfs.datanode.dns.interface</name>
-        <value>eth1</value>
-    </property-->
-    <property>
         <name>dfs.datanode.data.dir.perm</name>
         <value>700</value>
         <description>Permissions for the directories on on the local filesystem where
@@ -21,7 +13,11 @@
             symbolic.</description>
     </property>
     <property>
-        <name>dfs.webhdfs.enabled</name>
-        <value>true</value>
+      <name>dfs.namenode.name.dir</name>
+      <value>file:/tmp/%s/hdfs/namenode</value>
+    </property>
+    <property>
+      <name>dfs.datanode.data.dir</name>
+      <value>file:/tmp/%s/hdfs/datanode</value>
     </property>
 </configuration>

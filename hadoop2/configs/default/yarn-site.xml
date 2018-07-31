@@ -1,17 +1,12 @@
 <?xml version="1.0"?>
 <configuration>
     <property>
-        <name>yarn.resourcemanager.scheduler.class</name>
-        <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
-        <description>In case you do not want to use the default scheduler</description>
-    </property>
-    <property>
         <name>yarn.resourcemanager.hostname</name>
         <value>%s</value>
     </property>
     <property>
         <name>yarn.nodemanager.local-dirs</name>
-        <value>/tmp</value>
+        <value>/tmp/%s</value>
         <description>the local directories used by the nodemanager</description>
     </property>
     <property>
@@ -20,13 +15,24 @@
         <description>shuffle service that needs to be set for Map Reduce to run </description>
     </property>
     <property>
-        <name>yarn.nodemanager.delete.debug-delay-sec</name>
-        <value>3600</value>
-        <description>delay deletion of user cache </description>
+        <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+        <value>org.apache.hadoop.mapred.ShuffleHandler</value>
     </property>
     <property>
         <name>yarn.resourcemanager.resource-tracker.address</name>
-        <value>${yarn.resourcemanager.hostname}:11031</value>
+        <value>%s:%s</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>%s:%s</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>%s:%s</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.resource.cpu-vcores</name>
+        <value>%s</value>
     </property>
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
@@ -36,8 +42,5 @@
         <name>yarn.scheduler.minimum-allocation-mb</name>
         <value>2048</value>
     </property>
-    <property>
-        <name>yarn.nodemanager.resource.cpu-vcores</name>
-        <value>16</value>
-    </property>
+
 </configuration>
